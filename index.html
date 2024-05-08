@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Image Title</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        .image-container img.static {
+            width: 100%;
+            height: auto;
+            min-height: 100%; 
+            object-fit: cover; 
+        }
+        .image-container img.gif {
+            position: absolute;
+            height: auto;
+        }
+        .gif1, .gif2, .gif3, .gif4, .gif6 {
+            width: 100px; 
+        }
+        .top-left { top: 0; left: 0; }
+        .top-right { top: 0; right: 0; }
+        .bottom-left { bottom: 0; left: 0; }
+        .bottom-right { bottom: 0; right: 0; }
+        .bottom-middle { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .top-middle { top: 0; left: 50%; transform: translateX(-50%); }
+    </style>
 </head>
 <body>
-    <img src="wtf.png" alt="Descriptive Alt Text" style="width:100%; height:auto;">
+    <div class="image-container">
+        <img src="wtf.png" class="static" alt="Descriptive Alt Text">
+        <img src="1.gif" class="gif top-left" alt="Top Left GIF" style="width: 350px;">
+        <img src="3.gif" class="gif top-right" alt="Top Right GIF" style="width: 200px;">
+        <img src="4.gif" class="gif bottom-left" alt="Bottom Left GIF" style="width: 500px;">
+        <img src="2.gif" class="gif bottom-middle" alt="Bottom Middle GIF" style="width: 350px;">
+        <img src="6.gif" class="gif bottom-right" alt="Bottom Right GIF" style="width: 300px;">
+    </div>
 </body>
 </html>
